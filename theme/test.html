@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>提取日期示例</title>
+</head>
+<body>
+    <span class="coupon-date">截止日期：2023-12-31</span>
+
+    <script>
+        // 获取包含日期的<span>元素
+        var couponDateElement = document.querySelector('.coupon-date');
+
+        // 获取元素的文本内容
+        var couponDateText = couponDateElement.textContent;
+
+        // 提取日期部分（假设日期是在“截止日期：”之后的内容）
+        var dateString = couponDateText.split('截止日期：')[1];
+
+        // 输出提取的日期部分
+        console.log('提取的日期是：', dateString);
+    </script>
+</body>
+</html>

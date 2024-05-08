@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Aviato | E-commerce template</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+  
+  <script src="js/script.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  
+  <!-- Animate css -->
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    
+    .coupon-section {
+        margin-top: 50px;
+    }
+
+    .coupon-item {
+        background-color: #f2f2f2; /* 淺灰色背景 */
+        border: 2px solid #d1d1d1; /* 灰色邊框 */
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        border-radius: 15px; /* 圓角 */
+        color: #333; /* 深灰色文字 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 淺陰影效果 */
+    }
+
+    .coupon-item h3 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .coupon-code {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #e44d26; /* 標準橙色，可以根據需要更改 */
+    }
+
+    .coupon-date {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: #777;
+    }
+    .search-box {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    }
+
+    #couponSearch {
+        width: 180px; /* 調整搜尋框寬度 */
+        padding: 10px;
+        border: 2px solid #ccc; /* 淺灰色系邊框 */
+        border-radius: 5px 5px 5px 5px;
+        margin-right: 10px; /* 增加搜尋框右側間隔 */
+        outline: none;
+    }
+
+    #couponSearch:focus {
+        border-color: #999; /* 深灰色系邊框 */
+    }
+
+    .search-btn {
+        background-color: #ccc; /* 淺灰色系背景 */
+        color: #333; /* 深灰色系文字 */
+        border: 2px solid #ccc; /* 淺灰色系邊框 */
+        border-radius: 5px 5px 5px 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    .search-btn:hover {
+        background-color: #999; /* 深灰色系濃化背景 */
+        border-color: #999; /* 深灰色系濃化邊框 */
+    }
+    .search-box {
+    display: flex;
+    align-items: center;
+    }
+
+    #couponSearch {
+        border-radius: 5px 0 0 5px; /* 左側圓角 */
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px;
+    }
+
+    .search-btn {
+        background-color: #ccc;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px 5px 5px 5px; /* 右側圓角 */
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+
+    .add-btn {
+        background-color: #ccc;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px; /* 圓角 */
+        padding: 10px 15px;
+        cursor: pointer;
+        margin-left: auto; /* 將新增優惠卷按鈕推到最右邊 */
+    }
+
+    .add-btn:hover,
+    .search-btn:hover {
+        background-color: #999; /* 滑鼠懸停時的背景色 */
+        border-color: #999; /* 滑鼠懸停時的邊框色 */
+    }
+</style>
+
+</head>
+
+<body id="body">
+
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">優惠卷</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">首頁</a></li>
+                        <li class="active">所有優惠卷</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="search-box">
+        <input type="text" id="couponSearch" placeholder="Search by coupon name...">
+        <button class="search-btn" onclick="searchCoupons()">Search</button>
+        <button class="add-btn" onclick="redirectToAddCoupon()">新增優惠卷</button>
+    </div>
+</div>
+
+
+<section class="coupon-section">
+    <div class="container">
+        <!-- 優惠券項目在這裡 -->
+        <!-- 例子優惠券項目 -->
+        <div class="coupon-item">
+            <h3>滿額折扣</h3>
+            <p>購物滿 $100 可享額外 10% 折扣。</p>
+            <span class="coupon-code">DISCOUNT10</span><br/>
+            <span class="coupon-date">截止日期：2024-12-31</span>
+            
+            <a href="cart.html" class="btn btn-main" id="usable-link" style="display: none;">使用</a>
+            <a href="#" class="expired-link" id="expired-link" style="color: red;">無法使用，已逾期</a>
+        </div>
+        <!-- 重複上述結構以顯示每張優惠券 -->
+    </div>
+
+	<script>
+        var currentDate = new Date();
+        var couponDateElement = document.querySelector('.coupon-date');
+		var couponDateText = couponDateElement.textContent;
+        var dateString = couponDateText.split('截止日期：')[1].trim();
+        var couponEndDate = new Date(dateString);
+        if (currentDate > couponEndDate) {
+            document.getElementById('expired-link').style.display = 'inline';
+            document.getElementById('usable-link').style.display = 'none'; 
+        } else {
+            document.getElementById('expired-link').style.display = 'none';
+            document.getElementById('usable-link').style.display = 'inline';
+        }
+    </script>
+</section>
+
+<script>
+    function redirectToAddCoupon() {
+        window.location.href = 'add-coupon.html';
+    }
+</script>
+
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Instagram Feed Js -->
+    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <!-- Count Down Js -->
+    <script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+
+    <!-- slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+    <!-- Main Js File -->
+    <script src="js/script.js"></script>
+    
+
+
+  </body>
+  </html>

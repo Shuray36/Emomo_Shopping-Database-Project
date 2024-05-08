@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Aviato | E-commerce template</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Constra HTML Template v1.0">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- Themefisher Icon font -->
+  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  
+  <!-- Animate css -->
+  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 在<head>標籤中添加以下CSS -->
+    <style>
+        /* 新增優惠卷表單樣式 */
+        .add-coupon {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .add-coupon form {
+            background-color: #fff;
+            padding: 60px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-coupon label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .add-coupon input,
+        .add-coupon textarea,
+        .add-coupon select {
+            height: 50px;
+			width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        /* 固定描述框的高度並禁止縮放 */
+        .add-coupon textarea {
+            height: 150px; /* 調整高度 */
+            resize: none; /* 禁止縮放 */
+        }
+
+        .add-coupon button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        float: right; /* 將按鈕浮動到右邊 */
+    	}
+
+        .add-coupon button:hover {
+            background-color: #218838;
+        }
+
+		#error-msg {
+            color: red;
+            display: none;
+        }
+
+		select#rule {
+            height: 50px; /* Set the desired height */
+            /* Additional styling for better visibility */
+            padding: 8px;
+            font-size: 16px;
+        }
+
+		select#discountType {
+            height: 50px; /* Set the desired height */
+            /* Additional styling for better visibility */
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body id="body">
+    
+	<section class="add-coupon">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<form id="couponForm" action="#" method="post">
+						<label for="couponName">優惠卷名字:</label>
+						<input type="text" id="couponName" name="couponName" required>
+	
+						<label for="couponCode">優惠碼:</label>
+						<input type="text" id="couponCode" name="couponCode" required>
+	
+						<label for="discountType">折扣方式:</label>
+						<select id="discountType" name="discountType" required>
+							<option value="">選擇折扣方式</option>
+							<option value="金額">金額</option>
+							<option value="%數">百分比數</option>
+						</select>
+	
+						<label for="discountAmount">金額或%數:</label>
+						<input type="text" id="discountAmount" name="discountAmount" placeholder="請輸入金額或%數" required>
+	
+						<label for="rule">使用規則</label>
+						<select id="rule" name="rule" required>
+							<option value="">選擇使用規則</option>
+							<option value="滿額折扣">滿額折扣</option>
+							<option value="數量達標">數量達標</option>
+						</select>
+	
+						<label for="minimumAmount">需達金額</label>
+						<input type="text" id="minimumAmount" name="minimumAmount" pattern="[0-9]+" title="請輸入整數" placeholder="請輸入需達金額" required>
+						<div id="error-msg">請輸入整數</div>
+
+						<script>
+							document.getElementById('minimumAmount').addEventListener('input', function() {
+								var isValid = this.checkValidity();
+
+								if (!isValid) {
+									document.getElementById('error-msg').style.display = 'block';
+								} else {
+									document.getElementById('error-msg').style.display = 'none';
+								}
+							});
+						</script>
+
+						<label for="expiryDate">截止日期:</label>
+						<input type="date" id="expiryDate" name="expiryDate" required>
+	
+						<button type="submit">新增優惠卷</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Touchpin -->
+    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <!-- Instagram Feed Js -->
+    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <!-- Video Lightbox Plugin -->
+    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <!-- Count Down Js -->
+    <script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+
+    <!-- slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+
+    <!-- Google Mapl -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+
+    <!-- Main Js File -->
+    <script src="js/script.js"></script>
+    
+
+
+  </body>
+  </html>
